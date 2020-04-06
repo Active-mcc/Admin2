@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macongcong.mapper.OrderMapper">
+    <select id="cityList" resultType="City">
+        select * from  t_city
+    </select>
+    <select id="rouadList" resultType="Rouad">
+        select * from  t_street where cid = #{id}
+    </select>
+    <insert id="add" parameterType="Order">
+        insert into t_address values(null,#{address},#{sid},#{cid})
+    </insert>
+</mapper>
